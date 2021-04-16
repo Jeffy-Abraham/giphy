@@ -1,0 +1,21 @@
+.button-container
+{
+    background-color: gray;
+    box-shadow: none;
+    outline: none;
+    width: 160px;
+    border-style: none;
+    height: 35px;
+  
+}
+.button-container span{
+  
+  display: flex;
+   justify-content: center;
+   padding: 7px;
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: bolder;
+   font-size: 14.3px;
+   
+ 
+}

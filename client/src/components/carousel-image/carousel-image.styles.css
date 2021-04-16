@@ -1,0 +1,26 @@
+.carousel-Image img {
+  border-radius: 2px;
+  position: relative;
+}
+.favourites-button {
+  position: absolute;
+  display: none;
+  width: 100%;
+  top: 0;
+}
+.carousel-Image:hover .favourites-button {
+  display: block;
+  padding: 20px;
+  opacity: 0.9;
+  transition: opacity 0.2s ease-in-out;
+}
+.carousel-Image {
+  padding-left: 10px;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+ 
+}
+.carousel-Image:hover {
+  transform: scale(1.1);
+  z-index: 999;
+}

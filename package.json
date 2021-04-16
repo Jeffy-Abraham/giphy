@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "client": "cd client && npm start",
+    "server": "nodemon server.js",
+    "build": "cd client && npm run build",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "^4.17.1",
+    "joi": "^17.4.0",
+    "mongoose": "^5.12.4",
+    "nodemon": "^2.0.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeffy-Abraham/giphy.git"
+  },
+  "author": "jeffy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jeffy-Abraham/giphy/issues"
+  },
+  "homepage": "https://github.com/Jeffy-Abraham/giphy#readme"
+}
