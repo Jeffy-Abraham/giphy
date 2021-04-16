@@ -2,6 +2,7 @@ const express = require("express");
 const Joi = require("joi");
 const mongoose = require("mongoose");
 const sendData = require("./sendData/sendData");
+const bcrypt = require('bcrypt');
 const signNewUser = sendData.signNewUser;
 //mongoose models
 
@@ -44,26 +45,33 @@ app.post("/signUp", (req, res) => {
   schema
     .validateAsync(data)
     .then((success) => {
-      const fortuneCat = ImageLink[Math.floor(Math.random() * 8)];
+      const fortuneCat = fortuneCats[Math.floor(Math.random() * 8)];
 
-      var result = signNewUser(
+      //if validation sucessful then sign new user
+      signNewUser(
         req.body.Username,
         req.body.Password,
         req.body.Email,
         fortuneCat
-      );
-      res.send({
-        message: "User sucessfully signed up",
-        UserId:result
+      ).then((data) => {
+        if (data.status === "success") {
+          res.status(200).json({
+            message: data.userDetails,
+          });
+        }
+        
       });
     })
+    //if validation fails(like username length<3)
     .catch((err) => {
-      res.send({
-        message: err.message,
+      console.log("validation failed");
+      res.status(400).send({
+        message: err.message
       });
     });
 });
 
+//Randomly assign a fortune cat for new user
 var fortuneCats = [
   {
     imageLink:

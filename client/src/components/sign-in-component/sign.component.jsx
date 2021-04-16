@@ -14,7 +14,11 @@ function Sigin() {
   };
 
   const handleSubmit = () => {
-    if (formValue.Username.length == 0 || formValue.Password.length === 0||formValue.Email.length===0) {
+    if (
+      formValue.Username.length == 0 ||
+      formValue.Password.length === 0 ||
+      formValue.Email.length === 0
+    ) {
       alert("Please enter the Username and Password");
     }
 
@@ -24,7 +28,7 @@ function Sigin() {
         console.log(success);
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.response);
       });
     setdata({ Username: "", Password: "", Email: "" });
   };
