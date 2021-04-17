@@ -1,16 +1,15 @@
 
 import './App.css';
-import CarouselHeader from './components/carousel-header/carousel-header.component';
-import Trending from './assets/trending.png'
-import Navbar from './components/navbar-component/navbar.component';
-import SearchBar from './components/search-bar-component/searchbar.component';
-import { Switch, Route, useLocation } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
+import {useEffect} from 'react'
 import CategoryPage from './pages/categoryPage/category.page';
-import Homepage from './pages/homePage/homepage.page';
-import Sigin from './components/sign-in-component/sign.component';
 import AuthPage from './pages/authPage/authPage';
+import {connect} from 'react-redux'
 
-function App() {
+function App({currentUser}) {
+  useEffect(() => {
+    
+  });
   return (
     <div className="App">
    
@@ -25,4 +24,10 @@ function App() {
   );
 }
 
-export default App;
+
+const mapStateToProps = ({ user:{currentUser} }) => ({
+    
+  currentUser
+});
+
+export default connect(mapStateToProps, null)(App);

@@ -5,12 +5,19 @@
    
     position: absolute;
     left: 0;
+   
 }
 .image-background
 {
     height: 100vh;
     width: 50%;
+    margin: 20px;
     
+}
+.spinner-container
+{
+    width: '20%';
+    margin:auto
 }
 @media only screen and (max-width: 1000px) {
     .image-background{

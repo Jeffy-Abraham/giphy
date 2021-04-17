@@ -1,11 +1,13 @@
 import Sigin from "../../components/sign-in-component/sign.component";
 import Background from "../../assets/back.gif";
 import "./authPage.style.css";
-export default function AuthPage() {
+import { connect } from "react-redux";
+import Spinner from "react-loader-spinner";
+function AuthPage({ isSettingUp }) {
   return (
     <div className="auth-sigup-container">
       <div className="image-background">
-        <img src={Background} height="100%" width="90%" />
+        <img src={Background} height="95%" width="90%" />
       </div>
 
       <div className="auth-signup-container-1">
@@ -22,14 +24,35 @@ export default function AuthPage() {
         <div
           style={{ fontFamily: "sans-serif", color: "pink", fontSize: "19px" }}
         >
-          Welcome to the wolrd of gifs
+          Welcome to the world of gifs
         </div>
         <div style={{ color: "white", fontWeight: "300", marginTop: "40px" }}>
           Please create an account with you username and password to continue
         </div>
-
-        <Sigin />
+        {isSettingUp ? (
+          <div style={{ opacity: "0.1", position: "relative" }}>
+            <Spinner
+              className="spinner-container"
+              type="Puff"
+              color="#00BFFF"
+              height={100}
+              width={100}
+              timeout={3000} //3 secs
+            />
+            <Sigin />
+          </div>
+        ) : (
+          <div>
+            <Sigin />
+          </div>
+        )}
       </div>
     </div>
   );
 }
+
+const mapStateToProps = ({ user: { isSettingUp } }) => ({
+  isSettingUp,
+});
+
+export default connect(mapStateToProps, null)(AuthPage);
