@@ -1,5 +1,27 @@
 .input-box input
 {
-    width: 300px;
-    border-radius: 5px;
+    width: 270px;
+    height: 38px;
+    border-radius: 7px;
+    background: rgb(255, 222, 238);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(250, 168, 229, 0.473);
+  
+   
+}
+.input-box input:focus
+{
+    border-style: solid;
+    box-shadow: -3px 8px  20px rgba(245, 0, 33, 0.425);
+  
+}
+.input-label
+{
+   
+    font-weight: 600;
+    color: whitesmoke;
+   
+
+    
 }

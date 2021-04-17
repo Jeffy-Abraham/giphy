@@ -8,15 +8,15 @@ import { Switch, Route, useLocation } from "react-router-dom";
 import CategoryPage from './pages/categoryPage/category.page';
 import Homepage from './pages/homePage/homepage.page';
 import Sigin from './components/sign-in-component/sign.component';
+import AuthPage from './pages/authPage/authPage';
 
 function App() {
   return (
     <div className="App">
    
-    <Navbar/>
-   
+
     <Switch>
-      <Route exact path='/'component={Sigin}/>
+      <Route exact path='/'component={AuthPage}/>
       <Route exact path='/:categoryId' component={CategoryPage}/>
 
     </Switch>

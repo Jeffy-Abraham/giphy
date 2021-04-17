@@ -1,0 +1,28 @@
+.auth-sigup-container
+{
+    display: flex;
+ 
+   
+    position: absolute;
+    left: 0;
+}
+.image-background
+{
+    height: 100vh;
+    width: 50%;
+    
+}
+@media only screen and (max-width: 1000px) {
+    .image-background{
+        display: none;
+    }
+   .auth-signup-container-1
+    {
+      width: 50%;
+      margin: auto;
+
+    }
+  
+  
+    
+    }
