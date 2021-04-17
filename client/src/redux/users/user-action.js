@@ -20,7 +20,8 @@ export const signUpUser = (formValue) => {
     axios
       .post("/signUp", formValue)
       .then((success) => {
-        dispatch(successUser(success.data));
+       
+        dispatch(successUser(success.data.message));
       })
       .catch((err) => {
         dispatch(failedUser(err.response.data.message));

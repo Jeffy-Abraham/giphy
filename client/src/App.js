@@ -5,9 +5,11 @@ import {useEffect} from 'react'
 import CategoryPage from './pages/categoryPage/category.page';
 import AuthPage from './pages/authPage/authPage';
 import {connect} from 'react-redux'
+import FortuneCat from './pages/fortunecatPage/fortunecat';
 
 function App({currentUser}) {
   useEffect(() => {
+    console.log('MOUNTED')
     
   });
   return (
@@ -17,6 +19,7 @@ function App({currentUser}) {
     <Switch>
       <Route exact path='/'component={AuthPage}/>
       <Route exact path='/:categoryId' component={CategoryPage}/>
+      <Route exact path='/Signup/newUser'component={FortuneCat}/>
 
     </Switch>
   

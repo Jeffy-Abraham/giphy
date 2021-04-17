@@ -9,10 +9,17 @@
 }
 .image-background
 {
-    height: 100vh;
-    width: 50%;
+    height: 95vh;
+    width: 40%;
     margin: 20px;
     
+}
+.auth-signup-container-1
+{
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+
 }
 .spinner-container
 {
@@ -27,6 +34,7 @@
     {
       width: 50%;
       margin: auto;
+       padding-top: 5px;
 
     }
   

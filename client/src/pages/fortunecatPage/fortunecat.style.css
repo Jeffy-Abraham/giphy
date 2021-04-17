@@ -1,0 +1,46 @@
+.welcome-text-one {
+  font-size: 27px;
+  font-weight: 600;
+  width: 40%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgba(243, 23, 89, 0.966);
+  letter-spacing: 0.03rem;
+
+  margin-left: 20px;
+}
+.newuser-container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  width: 90%;
+  height: 80vh;
+  margin-top: 120px;
+  border-radius: 4px;
+  background-color: white;
+}
+.welcome-text-two {
+  margin-left: 20px;
+  font-size: 18px;
+}
+.welcome-texts {
+  width: 40%;
+  margin-top: -40px;
+  padding: 50px;
+}
+.cat-prophet {
+  margin-left: 40px;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 20px;
+  color: rgba(85, 75, 95, 0.966);
+  margin-bottom: 20px;
+}
+.given-cat {
+  font-size: 32px;
+  color: rgb(20, 6, 43);
+  font-weight: 600;
+  margin-left: 80px;
+}
+.given-cat img {
+  margin-left: -40px;
+}

@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  currentUser: "null",
+  currentUser:false,
   error: false,
   isSettingUp: false,
 };
