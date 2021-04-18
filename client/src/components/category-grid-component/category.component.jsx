@@ -3,7 +3,7 @@ import "./category.style.css";
 import {connect} from 'react-redux'
 import GifGallery from "../gif-gallery.component/gifsgallery.component";
 
- function CategoryGallery({imageArray}) {
+ function CategoryGallery({imageArray,}) {
    
   return (
   <GifGallery images={imageArray}/>

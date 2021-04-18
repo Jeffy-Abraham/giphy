@@ -3,22 +3,31 @@
   position: relative;
 }
 .favourites-button {
-  position: absolute;
   display: none;
-  width: 100%;
+  bottom: 0;
+  position: absolute;
+}
+.carousel-image-title {
+  color: white;
+  width: 90px;
+  font-size: 12px;
+  background-color: black;
+  position: absolute;
   top: 0;
+  display: none;
+}
+.carousel-Image:hover .carousel-image-title {
+  display: block;
 }
 .carousel-Image:hover .favourites-button {
   display: block;
   padding: 20px;
-  opacity: 0.9;
   transition: opacity 0.2s ease-in-out;
 }
 .carousel-Image {
   padding-left: 10px;
   transition: all 0.2s ease-in-out;
   position: relative;
- 
 }
 .carousel-Image:hover {
   transform: scale(1.1);

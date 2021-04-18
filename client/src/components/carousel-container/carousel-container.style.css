@@ -1,16 +1,13 @@
-.flex-carousel-container{
-    display: flex;
-    justify-content: space-evenly;
-    overflow-x: hidden;
-    overflow-y: hidden;
+.flex-carousel-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
-@media only screen and (max-width: 600px) {
-    .flex-carousel-container {
+
+@media only screen and (max-width: 1000px) {
+  .flex-carousel-container {
     flex-direction: column;
     width: 80%;
-  
-  
-    
-    }
-    
   }
+}

@@ -2,6 +2,7 @@ const express = require("express");
 const Joi = require("joi");
 const mongoose = require("mongoose");
 const sendData = require("./sendData/sendData");
+var cors = require('cors')
 const bcrypt = require('bcrypt');
 const signNewUser = sendData.signNewUser;
 const updateDescription=sendData.updateDescription;
@@ -28,7 +29,7 @@ mongoose
 const app = express();
 
 //Get the data from sign up
-
+app.use(cors())
 app.use(express.json());
 app.listen(5000, () => {
   console.log("listen at 5000");

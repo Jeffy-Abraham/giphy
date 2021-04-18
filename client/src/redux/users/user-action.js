@@ -18,7 +18,7 @@ export const signUpUser = (formValue) => {
     dispatch(getUser());
 
     axios
-      .post("/signUp", formValue)
+      .post("http://localhost:5000/signUp", formValue)
       .then((success) => {
        
         dispatch(successUser(success.data.message));
@@ -37,7 +37,7 @@ export const updateDescription=(formdata,user)=>
         dispatch(getUser());
     
         axios
-          .post("/signUp/updateDescription", data)
+          .post("http://localhost:5000/signUp/updateDescription", data)
           .then((success) => {
            
             dispatch(successUser(success.data.message));

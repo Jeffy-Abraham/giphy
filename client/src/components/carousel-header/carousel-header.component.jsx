@@ -1,13 +1,14 @@
-import './carousel-header.style.css'
+/*for custom headers with images */
 
-export default function CarouselHeader({title,icon})
-{
-    return(<div className='carousel-title-container'>
+import "./carousel-header.style.css";
 
-        <div><img src={icon} width='35px'/></div>
-        <div style={{marginLeft:'10px'}}>{title}</div>
-    </div>)
-
-
-
+export default function CarouselHeader({ title, icon }) {
+  return (
+    <div className="carousel-title-container">
+      <div>
+        <img src={icon} width="26px" height="26px" />
+      </div>
+      <div style={{ marginLeft: "10px" }}>{title}</div>
+    </div>
+  );
 }

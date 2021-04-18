@@ -2,10 +2,9 @@ import { useState } from "react";
 import CustomInputBox from "../custom-input-box/custom-input-box";
 import CustomButton from "../custom-button/custom-button.component";
 import { signUpUser } from "../../redux/users/user-action";
-import {connect} from 'react-redux'
+import { connect } from "react-redux";
 
-function Sigin({  signUpUser,error,isSettingUp }) {
- 
+function Sigin({ signUpUser, error, isSettingUp }) {
   const [formValue, setdata] = useState({
     Username: "",
     Password: "",
@@ -21,11 +20,12 @@ function Sigin({  signUpUser,error,isSettingUp }) {
     setdata({ Username: "", Password: "", Email: "" });
   };
 
-  {//can use hoc to prevent writing the logic again
+  {
+    //can use hoc to prevent writing the logic again
     return (
-      <div style={{ marginTop: "20px", color: "white", fontWeight: "600"  }}>
-        {error? <span>{error}</span>:<span></span>}
-       
+      <div style={{ marginTop: "20px", color: "white", fontWeight: "600" }}>
+        {error ? <span>{error}</span> : <span></span>}
+
         <div style={{ display: "flex" }}>
           <div>
             <CustomInputBox
@@ -66,9 +66,9 @@ const mapDispatchToProps = (dispatch) => ({
   signUpUser: (data) => dispatch(signUpUser(data)),
 });
 
-const mapStateToProps = ({ user:{error,isSettingUp} }) => ({
+const mapStateToProps = ({ user: { error, isSettingUp } }) => ({
   error,
-  isSettingUp
+  isSettingUp,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sigin);

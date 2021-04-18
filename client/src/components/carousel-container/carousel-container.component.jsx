@@ -1,46 +1,40 @@
+/*Component responssible for rendering Carousel Album  Homepage component use this component
+it accepts trending gis as the props  */
 import CarouselImage from "../carousel-image/carousel-image.component";
+import Loader from "react-loader-spinner";
 import "./carousel-container.style.css";
-export default function CarouselAlbum() {
-  const imageArray = [
-    {
-      link:
-        "https://media1.giphy.com/media/kBezu43YVrgGuZZGL2/giphy.gif?cid=ecf05e47f0c3867359f14e757db72ec51aa53af505cb87c2&rid=giphy.gif&ct=g",
-    },
-    {
-      link: "https://i.giphy.com/media/uqbm7TQHaUbDd9cXc3/giphy.webp",
-    },
-    {
-      link: "https://i.giphy.com/media/O9S4unHvciYuY/giphy.webp",
-    },
-    {
-      link: "https://i.giphy.com/media/VWwiOoSml2tAO4hckT/giphy.webp",
-    },
-    {
-      link: "https://i.giphy.com/media/Wt7WfMnLgsnJlLvohY/giphy.webp",
-    },
-    {
-      link:
-        "https://media1.giphy.com/media/kBezu43YVrgGuZZGL2/giphy.gif?cid=ecf05e47f0c3867359f14e757db72ec51aa53af505cb87c2&rid=giphy.gif&ct=g",
-    },
-    {
-      link: "https://i.giphy.com/media/uqbm7TQHaUbDd9cXc3/giphy.webp",
-    },
-    {
-      link: "https://i.giphy.com/media/O9S4unHvciYuY/giphy.webp",
-    },
-    {
-      link: "https://i.giphy.com/media/VWwiOoSml2tAO4hckT/giphy.webp",
-    },
-    {
-      link: "https://i.giphy.com/media/Wt7WfMnLgsnJlLvohY/giphy.webp",
-    },
-  ];
-
+export default function CarouselAlbum({ data }) {
   return (
-    <div className="flex-carousel-container">
-      {imageArray.map(({ link }) => {
-        return <CarouselImage imageLink={link} height='150px'/>;
-      })}
+    <div>
+      {data.length === 0 ? (
+        <div style={{ width: "30%", margin: "auto" }}>
+          {" "}
+          <Loader
+            type="Puff"
+            color="#00BFFF"
+            height={50}
+            width={50}
+            timeout={3000}
+          />
+        </div>
+      ) : (
+        <div className="flex-carousel-container">
+          {data.map((x) => {
+            console.log(x);
+            return (
+              <div key={x.id}>
+                <CarouselImage
+                  id={x.id}
+                  imageLink={x.images.fixed_height.url}
+                  height="150px"
+                  title={x.title}
+                  user={x.user}
+                />
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
