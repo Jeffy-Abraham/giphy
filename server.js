@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const sendData = require("./sendData/sendData");
 const bcrypt = require('bcrypt');
 const signNewUser = sendData.signNewUser;
+const updateDescription=sendData.updateDescription;
 //mongoose models
 
 //connection to the database
@@ -32,6 +33,42 @@ app.use(express.json());
 app.listen(5000, () => {
   console.log("listen at 5000");
 });
+
+
+
+app.post('/signUp/updateDescription',(req,res)=>
+{
+  
+  updateDescription(req.body.formdata.Description,req.body.user).then((data) => {
+    if (data.status === "success") {
+      console.log(data.userDetails)
+    
+      res.status(200).json({
+        message: data.userDetails,
+      });
+    }
+    
+  }).catch(err=>
+    {
+      res.status(400).send({
+        message: err.message
+      });
+
+    });
+})
+  
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.post("/signUp", (req, res) => {
   const data = req.body;

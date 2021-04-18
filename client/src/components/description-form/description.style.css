@@ -1,0 +1,9 @@
+.input-description-box 
+{
+   width: 400px;
+   background-color:rgb(243, 247, 252) ;
+   border-radius: 2px;
+   height: 150px;
+   padding: 10px;
+   font-family: monospace;
+}

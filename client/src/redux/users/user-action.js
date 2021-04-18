@@ -28,3 +28,22 @@ export const signUpUser = (formValue) => {
       });
   };
 };
+
+
+export const updateDescription=(formdata,user)=>
+{
+    var data={formdata,user}
+    return (dispatch) => {
+        dispatch(getUser());
+    
+        axios
+          .post("/signUp/updateDescription", data)
+          .then((success) => {
+           
+            dispatch(successUser(success.data.message));
+          })
+          .catch((err) => {
+            dispatch(failedUser(err.response.data.message));
+          });
+      };
+}

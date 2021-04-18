@@ -1,19 +1,12 @@
 import "./category.style.css";
-import CarouselImage from "../carousel-image/carousel-image.component";
+
 import {connect} from 'react-redux'
+import GifGallery from "../gif-gallery.component/gifsgallery.component";
 
  function CategoryGallery({imageArray}) {
    
   return (
-     
-    <div className="category-grid">
-      {imageArray.map((subArray) => {
-          
-        return (<div className='flex-category-grid'>{subArray.map(({ link }) => {
-            return <CarouselImage imageLink={link} Width='100%'/>;
-          })}</div>)
-      })}
-    </div>
+  <GifGallery images={imageArray}/>
   );
 }
 

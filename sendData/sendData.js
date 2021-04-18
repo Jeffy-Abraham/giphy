@@ -26,6 +26,34 @@ var encrypted=bcrypt.hashSync(Password,4)
   return success;
 };
 
+
+
+const updateDescription=async function (userDesc,userId) {
+  const user=await User.findById(userId)
+  if(!user)
+  {
+    var failed={status:'failed'}
+    console.log(failed)
+    return failed
+  }
+  var  a =new Date()
+  
+  user.set({
+    userDesc:userDesc,
+    loggedinAt:a.getDate().toString()
+  })
+  const result=await user.save()
+  var success = {
+    status: "success",
+    userDetails: result,
+  };
+  return success
+  
+}
+
 module.exports = {
   signNewUser,
+  updateDescription
 };
+
+

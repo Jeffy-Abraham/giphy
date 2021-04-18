@@ -1,7 +1,7 @@
-export default function DisplayPic() {
+export default function DisplayPic({imageLink}) {
   return (
     <img
-      src="https://media.giphy.com/avatars/entertainment/Poc7fb6dD9q5/200h.gif"
+      src={imageLink}
       width="240px"
     />
   );

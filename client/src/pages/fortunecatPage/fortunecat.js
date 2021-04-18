@@ -2,19 +2,22 @@ import React from "react";
 import "./fortunecat.style.css";
 import { TimelineMax } from "gsap/all";
 import { connect } from "react-redux";
+
 import loading from "../../assets/loading.gif";
+import Description from "../../components/description-form/description.component";
 
 class FortuneCat extends React.Component {
   constructor() {
     super();
     this.catProphet = null;
-    this.cat= null;
+    this.cat = null;
     this.welcomeMessage = null;
     this.newUserContainer = null;
     this.welcomeMessage2 = null;
     // reference to the animation
     this.myTween = null;
   }
+    
 
   componentDidMount() {
     var t1 = new TimelineMax({ delay: 0.4, repeat: 0 });
@@ -23,8 +26,8 @@ class FortuneCat extends React.Component {
         marginLeft: 60,
         opacity: 0,
       })
-      .from(this.catProphet,1,{display:'none',repeat:0},16)
-      .from(this.cat,1,{display:'none',repeat:0},16)
+      .from(this.catProphet, 1, { display: "none", repeat: 0 }, 16)
+      .from(this.cat, 1, { display: "none", repeat: 0 }, 16)
       .from(this.welcomeMessage2, 1, { left: 200, opacity: 0, repeat: 0 }, 1)
       .to(
         this.welcomeMessage,
@@ -43,31 +46,34 @@ class FortuneCat extends React.Component {
           display: "none",
         },
         6
-      ).to(
+      )
+      .to(
         this.catProphet,
         0.4,
         {
-          opacity:0.9,
-          display: 'block',
-          scaleX:1.4,
-          scaleY:1.3
-        },
-        8
-      ).to(
-        this.cat,
-        6,
-        {
-          opacity:0.9,
-          display: 'block',
+          opacity: 0.9,
+          display: "block",
+          scaleX: 1.4,
+          scaleY: 1.3,
         },
         8
       )
+      .to(
+        this.cat,
+        6,
+        {
+          opacity: 0.9,
+          display: "block",
+        },
+        8
+      );
   }
 
   render() {
-    const { currentUser } = this.props;
-  
    
+  
+    const { currentUser } = this.props;
+
     return (
       <div className="newuser-container">
         <div className="welcome-texts">
@@ -75,8 +81,10 @@ class FortuneCat extends React.Component {
             ref={(div) => (this.welcomeMessage = div)}
             className="welcome-text-one"
           >
-            Hey ! <span style={{ color: "rgb(6, 2, 32)", fontSize: "36px" }}> 
-            {currentUser.Username}</span>
+            Hey !{" "}
+            <span style={{ color: "rgb(6, 2, 32)", fontSize: "36px" }}>
+              {currentUser.Username}
+            </span>
           </div>
           <div
             className="welcome-text-two"
@@ -86,8 +94,8 @@ class FortuneCat extends React.Component {
           >
             why don't you tell us a bit about yourself Meanwhile, we will get
             you a fortune cat
-            <div style={{marginTop:'30px'}}>
-            <img src={loading} width="250px" />
+            <div style={{ marginTop: "30px" }}>
+              <img src={loading} width="250px" />
             </div>
           </div>
           <div
@@ -104,16 +112,31 @@ class FortuneCat extends React.Component {
               this.cat = div;
             }}
           >
-                <div>The {currentUser.fortuneCat.description}</div><div><img width='250px'src={currentUser.fortuneCat.imageLink} /></div><div style={{color:'black',fontSize:'22px',marginTop:'20px'}}>Black protects a household from illness</div></div>
-                
+            <div>The {currentUser.fortuneCat.description}</div>
+            <div>
+              <img
+                width="220px"
+                height="250px"
+                src={currentUser.fortuneCat.imageLink}
+              />
+            </div>
+            <div
+              style={{ color: "black", fontSize: "22px", marginTop: "20px" }}
+            >
+              Black protects a household from illness
+            </div>
+          </div>
+        </div>
+        <div style={{marginTop:'90px' ,marginRight:'10px'}}>
+        <Description/>
         </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ user}) => ({
-  currentUser:user.currentUser,
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser,
 });
 
 export default connect(mapStateToProps, null)(FortuneCat);
