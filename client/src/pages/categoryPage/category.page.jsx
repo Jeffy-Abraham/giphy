@@ -10,7 +10,7 @@ export default function CategoryPage({ imageArray, currentCategory, label }) {
     <div className="category-container">
       <div className="category-logo-container">
         <div>
-          <DisplayPic imageLink={profileImage} />
+          <DisplayPic imageLink={profileImage} alt='' />
         </div>
         <div
           style={{
@@ -51,7 +51,7 @@ export default function CategoryPage({ imageArray, currentCategory, label }) {
           >
             {atrate}
             <span style={{ marginLeft: "5px" }}>
-              <img src={Tick} width="15px" />
+              <img src={Tick} width="15px" alt=''/>
             </span>
           </div>
 

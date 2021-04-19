@@ -29,7 +29,7 @@ function SearchBar({ searchGifs }) {
         value={formValue.search}
       />
       <div onClick={() => handleSubmit()} className="magnigy-glass">
-        <img src={SearchIcon} width="40px" />
+        <img src={SearchIcon} width="40px" alt=''/>
       </div>
       <h5 style={{ color: "white" }}>Enter and click search</h5>
     </div>

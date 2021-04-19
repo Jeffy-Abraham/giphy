@@ -3,7 +3,6 @@ import { selectCategorybyRoute } from "../../redux/gifsTypes/gifsTypes-selector"
 import { makeApiCalls } from "../../redux/gifsTypes/gifsTypes-action";
 import { connect } from "react-redux";
 import "./category.route.css";
-import CarouselAlbum from "../carousel-container/carousel-container.component";
 import CategoryPage from "../../pages/categoryPage/category.page";
 
 function Category({ match, currentCategory, makeApiCalls }) {

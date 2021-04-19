@@ -82,7 +82,7 @@ const PublicProfiles = ({ currentPublic, match, findbyIdGif }) => {
                 >
                   @ {currentPublic.user.username}
                   <span style={{ marginLeft: "5px" }}>
-                    <img src={Tick} width="15px" />
+                    <img src={Tick} width="15px" alt='s'/>
                   </span>
                 </div>
 

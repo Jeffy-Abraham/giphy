@@ -5,7 +5,7 @@ const Logo = () => {
     <div>
       <Link to="/">
         {" "}
-        <img src={LogoGiphy} width="150px" />
+        <img src={LogoGiphy} width="150px" alt=''/>
       </Link>
     </div>
   );

@@ -21,7 +21,7 @@ export const makeApiCalls = (apiEndPoint,id) => {
       )
       .then((success) => {
 
-       if(id=='Entertainment')
+       if(id==='Entertainment')
        {
         dispatch(setEntertainmentGifs(success.data.data))
 

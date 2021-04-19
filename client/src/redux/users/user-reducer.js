@@ -1,5 +1,4 @@
-import { setFavour } from './user-action';
-import {addtoFav} from './user-utiliy'
+import { addtoFav } from "./user-utiliy";
 
 const INITIAL_STATE = {
   currentUser: false,
@@ -24,12 +23,10 @@ const userReducer = (state = INITIAL_STATE, action) => {
       };
 
     case "SET_FAVOUR":
-      var favgif=addtoFav(state,action.payload)
+      var favgif = addtoFav(state, action.payload);
       return {
-        ...state,currentUser:{...state.currentUser,favourites:favgif}
-        
-         
-        
+        ...state,
+        currentUser: { ...state.currentUser, favourites: favgif },
       };
 
     case "ERROR_USER":

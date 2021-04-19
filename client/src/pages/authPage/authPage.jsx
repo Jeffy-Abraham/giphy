@@ -7,8 +7,8 @@ import Spinner from "react-loader-spinner";
 function AuthPage({ isSettingUp, currentUser }) {
   let history = useHistory();
 
-  if (currentUser != false) {
-    if (currentUser.loggedinAt == "NEW USER") {
+  if (currentUser !== false) {
+    if (currentUser.loggedinAt === "NEW USER") {
       history.push("/Signup/newUser");
     }
   }
@@ -16,7 +16,7 @@ function AuthPage({ isSettingUp, currentUser }) {
     <div>
       <div className="auth-sigup-container">
         <div className="image-background">
-          <img src={Background} height="95%" width="90%" />
+          <img src={Background} height="95%" width="90%" alt='' />
         </div>
 
         <div className="auth-signup-container-1">

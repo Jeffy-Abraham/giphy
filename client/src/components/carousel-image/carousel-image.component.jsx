@@ -33,7 +33,7 @@ function CarouselImage({
     >
      
       <div style={{ position: "relative" }}>
-        <img src={imageLink} height={height} width={Width} />
+        <img src={imageLink} height={height} width={Width} alt='s'/>
       </div>
       
       <div className="carousel-image-title">{title}</div>
@@ -41,7 +41,7 @@ function CarouselImage({
         className="favourites-button"
         onClick={(e) => addToFavour(e, otherProps)}
       >
-        <img src={Favourites} height="22px" />
+        <img src={Favourites} height="22px" alt='aa' />
         
       </div>
     

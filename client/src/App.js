@@ -1,5 +1,5 @@
 import "./App.css";
-import { Switch, Route, NavLink } from "react-router-dom";
+import { Switch, Route} from "react-router-dom";
 import { useEffect } from "react";
 import { connect } from "react-redux";
 import FortuneCat from "./pages/fortunecatPage/fortunecat";
@@ -15,7 +15,7 @@ function App({ currentUser }) {
   console.log(currentUser);
   useEffect(() => {
     localStorage.clear()
-    
+
   });
   return (
     <div className="App">

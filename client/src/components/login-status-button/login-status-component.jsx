@@ -11,6 +11,7 @@ const LoginStatus = ({ currentUser }) => {
             src={currentUser.fortuneCat.imageLink}
             height="32px"
             width="32px"
+            alt='j'
           />
         </div>
         <div style={{ marginRight: "15px" }}>{currentUser.Username}</div>

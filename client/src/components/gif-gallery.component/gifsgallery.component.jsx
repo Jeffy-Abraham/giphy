@@ -1,6 +1,5 @@
-import CarouselHeader from "../carousel-header/carousel-header.component";
 import CarouselImage from "../carousel-image/carousel-image.component";
-import favourite from "../../assets/favourites.png";
+
 import "./gifsgaller.css";
 export default function GifGallery({ images }) {
   return (

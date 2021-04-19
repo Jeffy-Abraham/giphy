@@ -95,7 +95,7 @@ class FortuneCat extends React.Component {
             why don't you tell us a bit about yourself Meanwhile, we will get
             you a fortune cat
             <div style={{ marginTop: "30px" }}>
-              <img src={loading} width="250px" />
+              <img src={loading} width="250px" alt=''/>
             </div>
           </div>
           <div
@@ -115,7 +115,7 @@ class FortuneCat extends React.Component {
             <div>The {currentUser.fortuneCat.description}</div>
             <div>
               <img
-                width="220px"
+                width="220px" alt='n'
                 height="250px"
                 src={currentUser.fortuneCat.imageLink}
               />

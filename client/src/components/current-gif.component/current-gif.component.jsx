@@ -3,7 +3,7 @@ const CurrentGif = ({ image, text }) => {
     <div>
       {" "}
       <div>
-        <img src={image} />
+        <img src={image} alt='s'/>
       </div>
       <div
         style={{

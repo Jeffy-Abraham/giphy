@@ -3,7 +3,7 @@ it accepts trending gis as the props  */
 import CarouselImage from "../carousel-image/carousel-image.component";
 import Loader from "react-loader-spinner";
 import "./carousel-container.style.css";
-import CarouselHeader from "../carousel-header/carousel-header.component";
+
 export default function CarouselAlbum({ data,label }) {
   return (
     <div>
