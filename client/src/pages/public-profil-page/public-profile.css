@@ -1,0 +1,33 @@
+.profile-container {
+  
+  display: flex;
+  color: lightgray;
+  margin-top: 10px;
+ 
+}
+
+.flex-container-one {
+  width: 28%;
+ 
+}
+.category-logo-container {
+  width: 40%;
+}
+.counting-number {
+  font-size: 18px;
+  width: fit-content;
+  font-weight: 900;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  font-family: "raleway";
+}
+@media only screen and (max-width: 1300px) {
+  .category-logo-container {
+    display: none;
+  }
+  .category-container {
+    flex-direction: column;
+    margin-left: 190px;
+  }
+}

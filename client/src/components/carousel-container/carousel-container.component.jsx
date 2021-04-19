@@ -9,7 +9,7 @@ export default function CarouselAlbum({ data,label }) {
     <div>
     
     <div>
-      {data.length === 0 ? (
+      {data === undefined ? (
         <div style={{ width: "30%", margin: "auto" }}>
           {" "}
           <Loader

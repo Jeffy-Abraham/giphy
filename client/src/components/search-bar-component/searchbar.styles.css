@@ -2,6 +2,7 @@ input{
     width: 100%;
     height: 45px;
     outline: none;
+    padding-left: 80px;
     background-color: white;
     font-size: 18px;
     letter-spacing: 0.08rem;
@@ -9,6 +10,7 @@ input{
     color:rgb(100, 90, 90);
     font-family: Arial, Helvetica, sans-serif;
     margin-top: -20px;
+    position: relative;
    
    
    
@@ -19,9 +21,10 @@ input{
     position: absolute;
   
     top: 0;
-    height: 100%;
     width:50px;
-    
+    background-color: rgba(0, 0, 0, 0.842);
+    top: 77px;
+    padding: 4px;
     
    
    

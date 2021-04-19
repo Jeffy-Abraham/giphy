@@ -9,10 +9,13 @@ import PublicProfiles from "./pages/public-profil-page/public-profile.page";
 import Categories from "./components/category-route-transistion/category.route";
 import AuthPage from "./pages/authPage/authPage";
 import SearchBar from "./components/search-bar-component/searchbar.component";
+import userProfile from "./pages/userProfile/userProfile";
+import SearchPage from "./pages/searchPage/searchPage";
 function App({ currentUser }) {
   console.log(currentUser);
   useEffect(() => {
-    console.log("MOUNTED");
+    localStorage.clear()
+    
   });
   return (
     <div className="App">
@@ -22,9 +25,10 @@ function App({ currentUser }) {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/publicProfile/:id" component={PublicProfiles} />
         <Route exact path="/auth" component={AuthPage} />
-        
+        <Route exact path='/profile' component={userProfile}/>
         <Route exact path="/Signup/newUser" component={FortuneCat} />
         <Route exact path="/category/:categoryId" component={Categories} />
+        <Route exact path='/search'component={SearchPage}/>
       </Switch>
     </div>
   );

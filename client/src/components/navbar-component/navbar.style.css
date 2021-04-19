@@ -2,10 +2,10 @@
   display: flex;
   width: 100%;
   color: white;
-  align-items: center;
   justify-content: space-between;
-  margin-top: -20px;
- 
+  align-items: center;
+
+  justify-content: space-between;
 }
 .link-container {
   margin-left: 13px;
@@ -17,24 +17,19 @@
   border-bottom: solid;
   border-width: 3.7px;
   letter-spacing: 0.02rem;
-  border-image: linear-gradient(
-    to right,
-    rgb(43, 55, 61),
-    rgb(43, 37, 77)
-  );
+  border-image: linear-gradient(to right, rgb(43, 55, 61), rgb(43, 37, 77));
   border-image-slice: 1;
   padding-top: 8px;
   padding-bottom: 6px;
-  background: none;
+
 
   transition: background 0.6s ease;
 }
 .link-container:hover {
-  background: rgb(44, 126, 173)
-
+  background: rgb(44, 126, 173);
 }
 @media only screen and (max-width: 1000px) {
   .nav-container {
-  display: none;
+    display: none;
   }
 }

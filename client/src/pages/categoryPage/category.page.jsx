@@ -1,10 +1,10 @@
 import Tick from "../../assets/tick.png";
 import DisplayPic from "../../components/displaypic-component/displaypic.component";
 import GifGallery from "../../components/gif-gallery.component/gifsgallery.component";
-
+import CarouselAlbum from "../../components/carousel-container/carousel-container.component";
 import "./category.styles.css";
-export default function CategoryPage({ imageArray, currentCategory }) {
-  const { atrate, description, title, profileImage }=currentCategory
+export default function CategoryPage({ imageArray, currentCategory, label }) {
+  const { atrate, description, title, profileImage } = currentCategory;
 
   return (
     <div className="category-container">
@@ -38,7 +38,7 @@ export default function CategoryPage({ imageArray, currentCategory }) {
               letterSpacing: "0.08rem",
             }}
           >
-            {title} 
+            {title}
           </h1>
 
           <div
@@ -56,10 +56,18 @@ export default function CategoryPage({ imageArray, currentCategory }) {
           </div>
 
           <div>
-            <h2 style={{ color: "white" }}>All {title} </h2>
+            {label !== "userProfile" ? (
+              <h2 style={{ color: "white" }}>All {title} </h2>
+            ) : (
+              <h2 style={{ color: "white" }}>Your favourite GIFS </h2>
+            )}
           </div>
           <div>
-            <GifGallery images={imageArray} />
+            {label !== "userProfile" ? (
+              <GifGallery images={imageArray} />
+            ) : (
+              <CarouselAlbum data={imageArray} />
+            )}
           </div>
         </div>
       </div>

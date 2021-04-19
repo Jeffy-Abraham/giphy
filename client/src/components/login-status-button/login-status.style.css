@@ -1,0 +1,9 @@
+.flex-login-status {
+  display: flex;
+  width: 180px;
+  height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  
+  background: rgb(121, 119, 119);
+}

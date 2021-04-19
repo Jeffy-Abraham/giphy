@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import { selectCategorybyRoute } from "../../redux/gifsTypes/gifsTypes-selector";
 import { makeApiCalls } from "../../redux/gifsTypes/gifsTypes-action";
 import { connect } from "react-redux";
-import './category.route.css'
+import "./category.route.css";
 import CarouselAlbum from "../carousel-container/carousel-container.component";
-import CategoryPage from '../../pages/categoryPage/category.page'
+import CategoryPage from "../../pages/categoryPage/category.page";
 
 function Category({ match, currentCategory, makeApiCalls }) {
   const { imageArray } = currentCategory;
@@ -15,7 +15,7 @@ function Category({ match, currentCategory, makeApiCalls }) {
   console.log(currentCategory);
   return (
     <div>
-     <CategoryPage imageArray={imageArray} currentCategory={currentCategory}/>
+      <CategoryPage imageArray={imageArray} currentCategory={currentCategory} />
     </div>
   );
 }

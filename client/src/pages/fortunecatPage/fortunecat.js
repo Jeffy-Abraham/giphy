@@ -123,7 +123,7 @@ class FortuneCat extends React.Component {
             <div
               style={{ color: "black", fontSize: "22px", marginTop: "20px" }}
             >
-              Black protects a household from illness
+              You are lucky today ;)
             </div>
           </div>
         </div>
