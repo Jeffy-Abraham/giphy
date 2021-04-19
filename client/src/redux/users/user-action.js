@@ -12,7 +12,10 @@ export const successUser = (data) => ({
   type: "SET_USER",
   payload: data,
 });
-
+export const setFavour = (data) => ({
+  type: "SET_FAVOUR",
+  payload: data,
+});
 export const signUpUser = (formValue) => {
   return (dispatch) => {
     dispatch(getUser());
@@ -20,7 +23,6 @@ export const signUpUser = (formValue) => {
     axios
       .post("http://localhost:5000/signUp", formValue)
       .then((success) => {
-       
         dispatch(successUser(success.data.message));
       })
       .catch((err) => {
@@ -29,21 +31,18 @@ export const signUpUser = (formValue) => {
   };
 };
 
+export const updateDescription = (formdata, user) => {
+  var data = { formdata, user };
+  return (dispatch) => {
+    dispatch(getUser());
 
-export const updateDescription=(formdata,user)=>
-{
-    var data={formdata,user}
-    return (dispatch) => {
-        dispatch(getUser());
-    
-        axios
-          .post("http://localhost:5000/signUp/updateDescription", data)
-          .then((success) => {
-           
-            dispatch(successUser(success.data.message));
-          })
-          .catch((err) => {
-            dispatch(failedUser(err.response.data.message));
-          });
-      };
-}
+    axios
+      .post("http://localhost:5000/signUp/updateDescription", data)
+      .then((success) => {
+        dispatch(successUser(success.data.message));
+      })
+      .catch((err) => {
+        dispatch(failedUser(err.response.data.message));
+      });
+  };
+};

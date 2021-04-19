@@ -4,6 +4,7 @@
   color: white;
   align-items: center;
   justify-content: space-between;
+  margin-top: -20px;
  
 }
 .link-container {
@@ -31,4 +32,9 @@
 .link-container:hover {
   background: rgb(44, 126, 173)
 
+}
+@media only screen and (max-width: 1000px) {
+  .nav-container {
+  display: none;
+  }
 }

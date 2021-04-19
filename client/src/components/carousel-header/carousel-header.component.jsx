@@ -8,7 +8,7 @@ export default function CarouselHeader({ title, icon }) {
       <div>
         <img src={icon} width="26px" height="26px" />
       </div>
-      <div style={{ marginLeft: "10px" }}>{title}</div>
+      <div style={{ marginLeft: "10px" , color:'white' }}>{title}</div>
     </div>
   );
 }

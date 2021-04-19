@@ -3,8 +3,11 @@ it accepts trending gis as the props  */
 import CarouselImage from "../carousel-image/carousel-image.component";
 import Loader from "react-loader-spinner";
 import "./carousel-container.style.css";
-export default function CarouselAlbum({ data }) {
+import CarouselHeader from "../carousel-header/carousel-header.component";
+export default function CarouselAlbum({ data,label }) {
   return (
+    <div>
+    
     <div>
       {data.length === 0 ? (
         <div style={{ width: "30%", margin: "auto" }}>
@@ -20,11 +23,13 @@ export default function CarouselAlbum({ data }) {
       ) : (
         <div className="flex-carousel-container">
           {data.map((x) => {
-            console.log(x);
+           
             return (
-              <div key={x.id}>
-                <CarouselImage
-                  id={x.id}
+
+              <div >
+                <CarouselImage key={x.id} label={label}
+                 id={x.id}
+                  otherProps={x}
                   imageLink={x.images.fixed_height.url}
                   height="150px"
                   title={x.title}
@@ -35,6 +40,7 @@ export default function CarouselAlbum({ data }) {
           })}
         </div>
       )}
+    </div>
     </div>
   );
 }

@@ -5,7 +5,7 @@ export default function SearchBar({ Width,Height,Color }) {
     <div>
       <input type="text" style={{width:{Width}}} />
       <div className='magnigy-glass' >
-     
+        
 
       </div>
     </div>

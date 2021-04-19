@@ -1,46 +1,67 @@
-import CarouselAlbum from "../../components/carousel-container/carousel-container.component";
-import CategoryGallery from "../../components/category-grid-component/category.component";
+import Tick from "../../assets/tick.png";
 import DisplayPic from "../../components/displaypic-component/displaypic.component";
 import GifGallery from "../../components/gif-gallery.component/gifsgallery.component";
-import SearchBar from "../../components/search-bar-component/searchbar.component";
+
 import "./category.styles.css";
-export default function CategoryPage({
-  profileImage,
-  memberShip,
-  description,
-  title,
-  atrate,
-  label,
-  imageArray,
-  loggedinAt,
-}) {
+export default function CategoryPage({ imageArray, currentCategory }) {
+  const { atrate, description, title, profileImage }=currentCategory
+
   return (
     <div className="category-container">
       <div className="category-logo-container">
-        <DisplayPic imageLink={profileImage} />
-        <div style={{ color: "gray", marginTop: "20px", fontSize: "18px" }}>
+        <div>
+          <DisplayPic imageLink={profileImage} />
+        </div>
+        <div
+          style={{
+            fontSize: "14px",
+            marginTop: "30px",
+            color: "lightgray",
+            fontWeight: "400",
+            width: "48%",
+          }}
+        >
           {description}
         </div>
-        <div style={{ marginTop: "90px" }}>
-          <SearchBar Width="60%" Height="40px" />
-        </div>
+        <small>Follow on</small>
       </div>
-      <div style={{ marginLeft: "60px" }}>
-        <div style={{ color: "black" }}>
-          <h1 style={{ color: "black", fontSize: "36px" }}>@ {title}</h1>
-          <h3>Member of {memberShip} club</h3>
-          <h3></h3>
-          <small style={{ color: "gray", fontWeight: "600", fontSize: "16px" }}>
+      <div
+        className="category-title-container"
+        style={{ marginLeft: "-180px" }}
+      >
+        <div>
+          <h1
+            style={{
+              fontSize: "36px",
+              color: "white",
+              fontFamily: "Raleway",
+              letterSpacing: "0.08rem",
+            }}
+          >
+            {title} 
+          </h1>
+
+          <div
+            style={{
+              color: "gray",
+              fontWeight: "regular",
+              marginTop: "10px",
+              fontSize: "17px",
+            }}
+          >
             {atrate}
-          </small>
+            <span style={{ marginLeft: "5px" }}>
+              <img src={Tick} width="15px" />
+            </span>
+          </div>
+
           <div>
-            <small style={{ fontSize: "15px", color: "maroon" }}>
-              last login:{loggedinAt} April
-            </small>
+            <h2 style={{ color: "white" }}>All {title} </h2>
+          </div>
+          <div>
+            <GifGallery images={imageArray} />
           </div>
         </div>
-
-        <GifGallery images={imageArray} label={label} />
       </div>
     </div>
   );

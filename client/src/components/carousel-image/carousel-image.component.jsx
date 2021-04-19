@@ -3,28 +3,52 @@
 import "./carousel-image.styles.css";
 import Favourites from "../../assets/favourites.png";
 import { useHistory } from "react-router-dom";
-export default function CarouselImage({
+import { connect } from "react-redux";
+import { setFavour } from "../../redux/users/user-action";
+function CarouselImage({
   imageLink,
   Width,
   height,
   user,
   id,
   title,
+  otherProps,
+  setFavour,
+  label,
+  show
 }) {
   let history = useHistory();
-  console.log(id);
+  console.log(id)
+  const addToFavour = (e, favGif) => {
+    e.stopPropagation();
+    setFavour(favGif);
+    alert("Added to your favourite list");
+  };
+  
   return (
+
     <div
       className="carousel-Image"
-      onClick={() => history.push(`/publicProfile/${id}`)}
+       onClick={label!=='false'?() => history.push(`/publicProfile/${id}`):''}
     >
+     
       <div style={{ position: "relative" }}>
         <img src={imageLink} height={height} width={Width} />
       </div>
+      
       <div className="carousel-image-title">{title}</div>
-      <div className="favourites-button">
-        <img src={Favourites} height="35px" />
+      <div
+        className="favourites-button"
+        onClick={(e) => addToFavour(e, otherProps)}
+      >
+        <img src={Favourites} height="22px" />
+        
       </div>
+    
     </div>
   );
 }
+const mapDispatchToProps = (dispatch) => ({
+  setFavour: (data) => dispatch(setFavour(data)),
+});
+export default connect(null, mapDispatchToProps)(CarouselImage);

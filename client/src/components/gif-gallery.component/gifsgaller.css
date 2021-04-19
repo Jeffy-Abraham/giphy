@@ -1,0 +1,13 @@
+.category-grid{
+   
+    grid-column: auto auto auto auto;
+    margin-top: 50px;
+}
+.flex-category-grid
+{
+   
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    flex-wrap: wrap;
+}

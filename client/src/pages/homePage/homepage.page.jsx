@@ -8,10 +8,11 @@ import { fetchTrendingGifs } from "../../redux/gifsCategory/category-actions";
 import CarouselAlbum from "../../components/carousel-container/carousel-container.component";
 import CarouselHeader from "../../components/carousel-header/carousel-header.component";
 
-function HomePage({ trendinGifs, fetchTrendingGifs }) {
+function HomePage({ trendinGifs, fetchTrendingGifs,match }) {
   useEffect(() => {
+   
     fetchTrendingGifs();
-  }, []);
+  },[match.params] );
 
   return (
     <div>

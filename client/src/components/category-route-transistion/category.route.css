@@ -1,0 +1,11 @@
+.fade-gallery {
+  animation: fader 2s  forward;
+}
+
+@keyframes fader {
+    0%   {opacity: 0}
+   
+   50% {opacity:0.5}
+
+    100% {opacity: 0.9;}
+  }

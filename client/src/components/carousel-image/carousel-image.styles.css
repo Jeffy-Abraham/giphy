@@ -1,6 +1,7 @@
 .carousel-Image img {
   border-radius: 2px;
   position: relative;
+  margin: 5px;
 }
 .favourites-button {
   display: none;
@@ -15,8 +16,23 @@
   position: absolute;
   top: 0;
   display: none;
+  padding: 10px;
 }
-.carousel-Image:hover .carousel-image-title {
+.user_pic
+{
+  position: absolute;
+  z-index: 999;
+  right: 0;
+  opacity: 0;
+  padding: 2px;
+  
+
+}
+.carousel-Image:hover .user_pic{
+  opacity: 0.9;
+}
+
+.carousel-Image:hover .carousel-image-title  {
   display: block;
 }
 .carousel-Image:hover .favourites-button {

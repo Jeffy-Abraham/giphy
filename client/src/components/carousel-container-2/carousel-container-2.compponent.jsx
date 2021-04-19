@@ -27,7 +27,9 @@ export default function CarouselAlbum2() {
       <div className='flex-album-cotainer'>
         {imageArray.map(({ link }, index) => {
           if (index != 0) {
-            return <CarouselImage imageLink={link} width="250px" />;
+            return (<div >
+           
+              </div>);
           }
         })}
       </div>

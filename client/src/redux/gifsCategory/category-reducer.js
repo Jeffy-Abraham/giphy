@@ -1,28 +1,24 @@
-
-import{findGifs} from './category-utility'
+import { findGifs } from "./category-utility";
 
 const INITIAL_STATE = {
   isfetching: false,
   error: false,
   trendinGifs: [],
-  entertainmentGifs:[],
-  animalGifs:[],
-  reactionGifs:[],
-  sportsGifs:[],
-  currentPublic:{
+  entertainmentGifs: [],
+  animalGifs: [],
+  reactionGifs: [],
+  sportsGifs: [],
 
-  },
-  
+  currentPublic: {},
 };
 const categoryReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    
-    case"FIND_GIF":
-    findGifs(state,action.payload)
-    return{
-      ...state,
-      
-    } 
+    case "FIND_GIF":
+      var currentGif = findGifs(state, action.payload);
+      return {
+        ...state,
+        currentPublic: currentGif,
+      };
     case "GET_TRENDING":
       return {
         ...state,

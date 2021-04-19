@@ -1,16 +1,25 @@
 import CarouselHeader from "../carousel-header/carousel-header.component";
 import CarouselImage from "../carousel-image/carousel-image.component";
-import favourite from  '../../assets/favourites.png'
-export default function GifGallery({ images, label }) {
+import favourite from "../../assets/favourites.png";
+import './gifsgaller.css'
+export default function GifGallery({ images }) {
+ 
   return (
+   
     <div>
-        <CarouselHeader title='Favourites' icon={favourite}/>
       <div className="category-grid">
         {images.map((subArray) => {
           return (
             <div className="flex-category-grid">
-              {subArray.map(({ link }) => {
-                return <CarouselImage imageLink={link} Width="100%" />;
+              {subArray.map(link => {
+                return    <CarouselImage key={link.id} label='false'show='false'
+                id={link.id}
+                 otherProps={link}
+                 imageLink={link.images.fixed_height.url}
+                 height="150px"
+                 title={link.title}
+                 user={link.user}
+               />
               })}
             </div>
           );
